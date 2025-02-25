@@ -11,6 +11,8 @@ import UIKit
 import CoreFramework
 
 class MenuView: UIView {
+    var didTapOnboarding: (() -> Void)?
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Example Menu"
@@ -61,7 +63,7 @@ class MenuView: UIView {
     
     @objc
     private func didTapOnboardingButton() {
-        OnboardingView()
+        didTapOnboarding?()
         //chamar o onboarding view
     }
 }
