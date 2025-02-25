@@ -9,7 +9,7 @@ import UIKit
 //import CoreFramework
 
 class MenuViewController: UIViewController {
-    private let contentView: MenuView()
+    private let contentView = MenuView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
