@@ -1,0 +1,4 @@
+[submodule "CoreFramework"]
+	path = CoreFramework
+	url = https://github.com/rocketseat-education/swift-core-framework.git
+	branch = main
