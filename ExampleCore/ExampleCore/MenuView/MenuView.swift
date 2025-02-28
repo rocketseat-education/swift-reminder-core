@@ -23,12 +23,25 @@ class MenuView: UIView {
     }()
     
     private let onboardingButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("Onboarding", for: .normal)
         button.layer.cornerRadius = Metrics.medium
         button.backgroundColor = .red
         button.tintColor = .white
         button.addTarget(self, action: #selector(didTapOnboardingButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let checkbox = ToggleCheckbox()
+    
+    private let testCheckboxButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Test checkbox", for: .normal)
+        button.layer.cornerRadius = Metrics.medium
+        button.backgroundColor = .red
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(didTapCheckboxButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -41,6 +54,7 @@ class MenuView: UIView {
     private func setupUI() {
         addSubview(titleLabel)
         addSubview(onboardingButton)
+        addSubview(testCheckboxButton)
         setupConstraints()
     }
     
@@ -58,6 +72,11 @@ class MenuView: UIView {
             onboardingButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             onboardingButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
             onboardingButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
+            
+            testCheckboxButton.topAnchor.constraint(equalTo: onboardingButton.bottomAnchor, constant: Metrics.medium),
+            testCheckboxButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
+            testCheckboxButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
+            testCheckboxButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
         ])
     }
     
@@ -65,5 +84,13 @@ class MenuView: UIView {
     private func didTapOnboardingButton() {
         didTapOnboarding?()
         //chamar o onboarding view
+    }
+    
+    @objc
+    private func didTapCheckboxButton() {
+        let checkBoxViewController = CheckboxViewController()
+        if let parentViewController = self.window?.rootViewController {
+            parentViewController.present(checkBoxViewController, animated: true)
+        }
     }
 }

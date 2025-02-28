@@ -69,6 +69,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C69E8B4B2D71D6580070EFB9 /* ToggleCheckbox */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ToggleCheckbox;
+			sourceTree = "<group>";
+		};
 		C6ED0E552D6E5779008F7D78 /* ExampleCore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -145,6 +150,7 @@
 		C6D83F602D6E6B3F004222CA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C69E8B4B2D71D6580070EFB9 /* ToggleCheckbox */,
 				C6D83F5D2D6E6B3F004222CA /* Constants */,
 				C6D83F5F2D6E6B3F004222CA /* Onboarding */,
 			);
@@ -229,6 +235,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				C69E8B4B2D71D6580070EFB9 /* ToggleCheckbox */,
 				C6ED0E552D6E5779008F7D78 /* ExampleCore */,
 			);
 			name = ExampleCore;
