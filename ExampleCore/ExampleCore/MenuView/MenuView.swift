@@ -46,6 +46,17 @@ class MenuView: UIView {
         return button
     }()
     
+    private let testCustomButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Test customButton", for: .normal)
+        button.layer.cornerRadius = Metrics.medium
+        button.backgroundColor = .red
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(didTapCustomButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override init (frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -55,6 +66,7 @@ class MenuView: UIView {
         addSubview(titleLabel)
         addSubview(onboardingButton)
         addSubview(testCheckboxButton)
+        addSubview(testCustomButton)
         setupConstraints()
     }
     
@@ -77,6 +89,11 @@ class MenuView: UIView {
             testCheckboxButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
             testCheckboxButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
             testCheckboxButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
+            
+            testCustomButton.topAnchor.constraint(equalTo: testCheckboxButton.bottomAnchor, constant: Metrics.medium),
+            testCustomButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize),
+            testCustomButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
+            testCustomButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
         ])
     }
     
@@ -88,9 +105,17 @@ class MenuView: UIView {
     
     @objc
     private func didTapCheckboxButton() {
-        let checkBoxViewController = CheckboxViewController()
+        let checkboxViewController = CheckboxViewController()
         if let parentViewController = self.window?.rootViewController {
-            parentViewController.present(checkBoxViewController, animated: true)
+            parentViewController.present(checkboxViewController, animated: true)
+        }
+    }
+    
+    @objc
+    private func didTapCustomButton() {
+        let customButtomViewController = ButtonTestViewController()
+        if let parentViewController = self.window?.rootViewController {
+            parentViewController.present(customButtomViewController, animated: true)
         }
     }
 }
