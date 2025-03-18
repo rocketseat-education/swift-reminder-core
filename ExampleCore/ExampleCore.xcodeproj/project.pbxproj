@@ -59,7 +59,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C6ED0E652D6E577A008F7D78 /* Exceptions for "ExampleCore" folder in "ExampleCore" target */ = {
+		C6E111B02D89C5DB00AFEE82 /* Exceptions for "ExampleCore" folder in "ExampleCore" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -82,7 +82,7 @@
 		C6ED0E552D6E5779008F7D78 /* ExampleCore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				C6ED0E652D6E577A008F7D78 /* Exceptions for "ExampleCore" folder in "ExampleCore" target */,
+				C6E111B02D89C5DB00AFEE82 /* Exceptions for "ExampleCore" folder in "ExampleCore" target */,
 			);
 			path = ExampleCore;
 			sourceTree = "<group>";
